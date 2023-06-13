@@ -1,66 +1,73 @@
 #include "Triangulo.h"
+#include <fstream>
 
-void Triangulo::formula_Area() {
-	cout << setw(6) << "b * h \n"
-		<< setw(6) << "----- \n"
-		<< setw(6) << "  2   ";
+// Constructores
+Triangulo::Triangulo()
+	: a(0), b(0), c(0), h(0) {
 }
 
-void Triangulo::formula_Perimetro() {
-	cout << setw(7) << "a + b + c";
+Triangulo::Triangulo(int a, int b, int c, int h)
+	: a(a), b(b), c(c), h(h) {
 }
 
-void Triangulo::Area(int b, int h) {
-	cout << b << " * " << h << endl
-		<< setw(6) << "-----\n"
-		<< setw(6) << "  2  \n\n";
-
-	int numerador = b * h;
-	cout << setw(4) << numerador << endl
-		<< setw(6) << "------\n"
-		<< setw(7) << "  2  \n\n";
-
-	int respuesta = numerador / 2;
-	cout << setw(4) << respuesta << endl;
+//Getters
+int Triangulo::getA() const {
+	return a;
 }
 
-void Triangulo::Perimetro(int a, int b, int c) {
-	cout << a << " + " << b << " + " << c << endl << endl;
-
-	int suma = a + b + c;
-	cout << setw(6) << suma;
+int Triangulo::getB() const {
+	return b;
 }
 
-void Triangulo::Dibujar(int a, int b, int c, int h) {
-	char triangle[10][70] = {
-		"                     /-\\",
-		"                        /-- | -\\",
-		"                     /--    |   -\\",
-		"                  /--       |     -\\",
-		"              /---          |      -\\",
-		"           /--              |        -\\",
-		"        /--                 |         -\\",
-		"     /--                    |--+        -\\",
-		"  /--                       |  |          -\\",
-		"---------------------------------------------"
-	};
+int Triangulo::getC() const {
+	return c;
+}
 
-	for (int i = 0; i < 10; i++) {
-		cout << triangle[i] << endl;
+int Triangulo::getH() const {
+	return h;
+}
+
+//Setters
+void Triangulo::setA(int a) {
+	this->a = a;
+}
+
+void Triangulo::setB(int b) {
+	this->b = b;
+}
+
+void Triangulo::setC(int c) {
+	this->c = c;
+}
+
+void Triangulo::setH(int h) {
+	this->h = h;
+}
+
+//Métodos
+void Triangulo::Dibujar() const {
+	ifstream archivoTriangulo("- Triangulo.txt");
+	if (!archivoTriangulo) {
+		cout << "No se pudo abrir el archivo" << endl;
+		exit(EXIT_FAILURE);
 	}
-	cout << "\t\t\tb = " << b << endl;
+
+	string line;
+
+	while (getline(archivoTriangulo, line)) {
+		line.replace(line.find("XXaXX"), 5, to_string(a));
+		line.replace(line.find("XXbXX"), 5, to_string(b));
+		line.replace(line.find("XXcXX"), 5, to_string(c));
+		line.replace(line.find("XXhXX"), 5, to_string(h));
+
+		line.replace(line.find("XXb+cXX"), 7, to_string(b + c));
+		line.replace(line.find("XXperimetroXX"), 17, to_string(a + b + c));
+
+		line.replace(line.find("XXb*hXX"), 7, to_string(b * h));
+		line.replace(line.find("XXareaXX"), 15, to_string(static_cast<double>(b * h) / 2.0));
+
+		cout << line << endl;
+	}
+
 }
 
-/*void Triangulo::Dibujar() {
-	cout << "		   /-\\               " << endl;
-	cout << "		  /-- |--\\            " << endl;
-	cout << "		 /--   |  -\\          " << endl;
-	cout << "		/--     |    -\\        " << endl;
-	cout << "		a = " << setw(2) << a << " /--       |       \\c = " << setw(2) << c << endl;
-	cout << "    /---           |        -\\     " << endl;
-	cout << "   /--              |   h = " << setw(2) << h << "    -\\   " << endl;
-	cout << "  /--               |           \\  " << endl;
-	cout << " /--                |--+          -\\ " << endl;
-	cout << "/---------------------------------------------" << endl;
-	cout << "               b = " << setw(2) << b << endl;
-}*/

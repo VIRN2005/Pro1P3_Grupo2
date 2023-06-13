@@ -3,10 +3,10 @@
 
 #include <iostream>
 #include <iomanip>
-#include "Figura.h"
+#include "Figuras.h"
 using namespace std;
 
-class Triangulo : public Figura {
+class Triangulo : public Figuras {
 private:
 	int a;
 	int b;
@@ -14,11 +14,24 @@ private:
 	int h;
 
 public:
-	void formula_Area() override;
-	void formula_Perimetro() override;
-	void Area(int, int);
-	void Perimetro(int, int, int);
-	void Dibujar(int, int, int, int);
+	//Constructores
+	Triangulo(); //Vacio
+	Triangulo(int, int, int, int); //Sobrecargado
+
+	//Getters de Cada Variable Solicitada
+	int getA() const;
+	int getB() const;
+	int getC() const;
+	int getH() const;
+
+	//Setters de Cada Variable Solicitada
+	void setA(int);
+	void setB(int);
+	void setC(int);
+	void setH(int);
+
+	//Método Dibujar Descrito en las Instrucciones
+	void Dibujar() const;
 };
 
 # endif

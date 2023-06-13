@@ -21,7 +21,7 @@
     <ClCompile Include="Triangulo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Figura.cpp">
+    <ClCompile Include="Figuras.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="Triangulo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Figura.h">
+    <ClInclude Include="Figuras.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

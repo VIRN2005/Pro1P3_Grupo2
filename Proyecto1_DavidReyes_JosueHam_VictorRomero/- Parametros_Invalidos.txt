@@ -1,0 +1,14 @@
+Uso: Figuras_Planas.exe ACCION [VARIABLES]
+     Calculos de perímetro y área de Figuras Planas.
+     Donde:
+		ACCION:
+			  ayuda	        | Información sobre el usa del programa.
+
+			  triangulo     | VARIABLES: a b c h
+			  paralelogramo | VARIABLES: a b h
+			  rectangulo    | VARIABLES: a b
+			  cuadrado      | VARIABLES: a
+			  rombo         | VARIABLES: a d D
+			  cometa        | VARIABLES: a b d D
+			  trapecio      | VARIABLES: a b c h B
+			  circulo       | VARIABLES: r

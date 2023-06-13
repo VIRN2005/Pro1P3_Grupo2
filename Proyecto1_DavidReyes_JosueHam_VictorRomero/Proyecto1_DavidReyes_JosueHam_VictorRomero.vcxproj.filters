@@ -27,7 +27,11 @@
     <ClCompile Include="Rectangulo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Cuadrado.cpp">
+=======
+    <ClCompile Include="Rombo.cpp">
+>>>>>>> 86bb01bc925283c02274551f17371a5cf9db95be
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +45,11 @@
     <ClInclude Include="Rectangulo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Cuadrado.h">
+=======
+    <ClInclude Include="Rombo.h">
+>>>>>>> 86bb01bc925283c02274551f17371a5cf9db95be
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

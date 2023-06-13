@@ -131,12 +131,14 @@
     <ClCompile Include="Figuras.cpp" />
     <ClCompile Include="Proyecto1_DavidReyes_JosueHam_VictorRomero.cpp" />
     <ClCompile Include="Rectangulo.cpp" />
+    <ClCompile Include="Rombo.cpp" />
     <ClCompile Include="Triangulo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cuadrado.h" />
     <ClInclude Include="Figuras.h" />
     <ClInclude Include="Rectangulo.h" />
+    <ClInclude Include="Rombo.h" />
     <ClInclude Include="Triangulo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

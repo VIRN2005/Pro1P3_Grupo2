@@ -61,10 +61,10 @@ void Triangulo::Dibujar() const {
 		line.replace(line.find("XXhXX"), 5, to_string(h));
 
 		line.replace(line.find("XXb+cXX"), 7, to_string(b + c));
-		line.replace(line.find("XXperimetroXX"), 17, to_string(a + b + c));
+		line.replace(line.find("XXperimetroXX"), 13, to_string(a + b + c));
 
 		line.replace(line.find("XXb*hXX"), 7, to_string(b * h));
-		line.replace(line.find("XXareaXX"), 15, to_string(static_cast<double>(b * h) / 2.0));
+		line.replace(line.find("XXareaXX"), 8, to_string(static_cast<double>(b * h) / 2.0));
 
 		cout << line << endl;
 	}

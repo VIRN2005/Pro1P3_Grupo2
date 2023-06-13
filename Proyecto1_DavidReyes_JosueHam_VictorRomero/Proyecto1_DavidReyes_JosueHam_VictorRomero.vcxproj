@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cuadrado.cpp" />
     <ClCompile Include="Figuras.cpp" />
     <ClCompile Include="Proyecto1_DavidReyes_JosueHam_VictorRomero.cpp" />
     <ClCompile Include="Rectangulo.cpp" />
     <ClCompile Include="Triangulo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cuadrado.h" />
     <ClInclude Include="Figuras.h" />
     <ClInclude Include="Rectangulo.h" />
     <ClInclude Include="Triangulo.h" />

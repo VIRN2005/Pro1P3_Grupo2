@@ -35,7 +35,7 @@ void Rombo::Dibujar() const {
     ifstream archivoRombo("- Rombo.txt", ios::in);
 
     if (!archivoRombo) {
-        cerr << "No se pudo abrir el archivo" << endl;
+        cout << "No se pudo abrir el archivo" << endl;
         exit(EXIT_FAILURE);
     }
 

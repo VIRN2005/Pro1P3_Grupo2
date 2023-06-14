@@ -4,7 +4,7 @@
 #include "Figuras.h"
 using namespace std;
 
-class Cuadrado {
+class Cuadrado : public Figuras {
 private:
 	int a;
 public:

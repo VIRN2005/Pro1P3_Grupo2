@@ -4,7 +4,7 @@
 #include "Figuras.h"
 using namespace std;
 
-class Rectangulo : public Figuras{
+class Rectangulo : public Figuras {
 private: 
 	int a, b;
 public:

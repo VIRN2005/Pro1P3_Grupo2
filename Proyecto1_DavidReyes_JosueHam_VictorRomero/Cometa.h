@@ -3,7 +3,8 @@
 #include <iomanip>
 #include "Figuras.h"
 using namespace std;
-class Cometa: public Figuras{
+
+class Cometa : public Figuras {
 private:
 	int a;
 	int b;

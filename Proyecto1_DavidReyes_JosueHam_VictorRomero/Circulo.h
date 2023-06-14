@@ -3,7 +3,8 @@
 #include <iomanip>
 #include "Figuras.h"
 using namespace std;
-class Circulo {
+
+class Circulo : public Figuras {
 private:
 	int r;
 public:

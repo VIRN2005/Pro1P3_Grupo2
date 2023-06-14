@@ -4,7 +4,7 @@
 #include "Figuras.h"
 using namespace std;
 
-class Trapecio : public Figuras{
+class Trapecio : public Figuras {
 private:
 	int a;
 	int b;

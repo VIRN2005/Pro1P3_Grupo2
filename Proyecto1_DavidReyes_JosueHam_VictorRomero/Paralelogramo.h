@@ -3,7 +3,8 @@
 #include <iomanip>
 #include "Figuras.h"
 using namespace std;
-class Paralelogramo:public Figuras{
+
+class Paralelogramo : public Figuras {
 private:
 	int h;
 	int a;

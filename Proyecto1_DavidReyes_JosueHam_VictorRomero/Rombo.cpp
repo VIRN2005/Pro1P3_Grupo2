@@ -45,10 +45,10 @@ void Rombo::Dibujar() const {
         line.replace(line.find("XXdXX"), 5, to_string(d));
         line.replace(line.find("XXDXX"), 5, to_string(D));
 
-        line.replace(line.find("XXperimetroXX"), 13, to_string(4 * a));
+        line.replace(line.find("XXperimetroXX"), 13, to_string(static_cast < double>(4 * a)));
 
         line.replace(line.find("XXD*dXX"), 7, to_string(D * d));
-        line.replace(line.find("XXareaXX"), 8, to_string((D * d)/2));
+        line.replace(line.find("XXareaXX"), 8, to_string(static_cast<double>(D * d)/2.0));
 
 
         cout << line << endl;

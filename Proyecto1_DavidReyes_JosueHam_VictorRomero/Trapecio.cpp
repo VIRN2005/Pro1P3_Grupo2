@@ -1,5 +1,5 @@
 #include "Trapecio.h"
-
+#include <fstream>
 // Constructores
 Trapecio::Trapecio()
 	: a(0), b(0), B(0), c(0), h(0) {
@@ -53,15 +53,15 @@ void Trapecio::setH(int h) {
 
 //Métodos
 void Trapecio::Dibujar() const {
-	ifstream archivoTriangulo("- Trapecio.txt");
-	if (!archivoTriangulo) {
+	ifstream archivoTrapecio("- Trapecio.txt");
+	if (!archivoTrapecio) {
 		cout << "No se pudo abrir el archivo" << endl;
 		exit(EXIT_FAILURE);
 	}
 
 	string line;
 
-	while (getline(archivoTriangulo, line)) {
+	while (getline(archivoTrapecio, line)) {
 		line.replace(line.find("XXaXX"), 5, to_string(a));
 		line.replace(line.find("XXbXX"), 5, to_string(b));
 		line.replace(line.find("XXBXX"), 5, to_string(B));

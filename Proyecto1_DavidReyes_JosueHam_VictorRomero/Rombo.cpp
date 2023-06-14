@@ -1,5 +1,5 @@
 #include "Rombo.h"
-
+#include <fstream>
 //Cuerpos de los constructores
 Rombo::Rombo() 
 	: a(0), d(0), D(0){

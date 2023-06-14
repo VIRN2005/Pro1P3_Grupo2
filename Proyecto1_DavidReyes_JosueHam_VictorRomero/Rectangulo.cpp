@@ -1,4 +1,5 @@
 #include "Rectangulo.h"
+#include <fstream>
 Rectangulo::Rectangulo()
 	: a(0), b(0){
 }

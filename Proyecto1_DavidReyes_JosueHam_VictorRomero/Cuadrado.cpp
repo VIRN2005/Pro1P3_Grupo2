@@ -1,5 +1,5 @@
 #include "Cuadrado.h"
-
+#include <fstream>
 Cuadrado::Cuadrado()
 	:a(0) {
 

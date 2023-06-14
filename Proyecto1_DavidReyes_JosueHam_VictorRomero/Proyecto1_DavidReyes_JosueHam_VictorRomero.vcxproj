@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cometa.cpp" />
     <ClCompile Include="Cuadrado.cpp" />
     <ClCompile Include="Figuras.cpp" />
     <ClCompile Include="Paralelogramo.cpp" />
@@ -137,6 +138,7 @@
     <ClCompile Include="Triangulo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cometa.h" />
     <ClInclude Include="Cuadrado.h" />
     <ClInclude Include="Figuras.h" />
     <ClInclude Include="Paralelogramo.h" />

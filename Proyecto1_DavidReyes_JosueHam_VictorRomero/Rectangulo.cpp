@@ -27,7 +27,7 @@ void Rectangulo::Dibujar() const {
     ifstream archivoRectangulo("- Rectangulo.txt", ios::in);
 
     if (!archivoRectangulo) {
-        cerr << "No se pudo abrir el archivo" << endl;
+        cout << "No se pudo abrir el archivo" << endl;
         exit(EXIT_FAILURE);
     }
 

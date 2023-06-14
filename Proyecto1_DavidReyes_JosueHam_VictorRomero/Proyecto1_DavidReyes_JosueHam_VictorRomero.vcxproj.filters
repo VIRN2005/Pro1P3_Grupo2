@@ -10,6 +10,7 @@
     <ClCompile Include="Trapecio.cpp" />
     <ClCompile Include="Paralelogramo.cpp" />
     <ClCompile Include="Cometa.cpp" />
+    <ClCompile Include="Circulo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cuadrado.h" />
@@ -20,5 +21,6 @@
     <ClInclude Include="Trapecio.h" />
     <ClInclude Include="Paralelogramo.h" />
     <ClInclude Include="Cometa.h" />
+    <ClInclude Include="Circulo.h" />
   </ItemGroup>
 </Project>

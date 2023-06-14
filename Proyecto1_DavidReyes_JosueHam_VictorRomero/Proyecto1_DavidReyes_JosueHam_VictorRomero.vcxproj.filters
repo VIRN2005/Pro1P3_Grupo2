@@ -8,6 +8,7 @@
     <ClCompile Include="Rombo.cpp" />
     <ClCompile Include="Triangulo.cpp" />
     <ClCompile Include="Trapecio.cpp" />
+    <ClCompile Include="Paralelogramo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cuadrado.h" />
@@ -16,5 +17,6 @@
     <ClInclude Include="Rombo.h" />
     <ClInclude Include="Triangulo.h" />
     <ClInclude Include="Trapecio.h" />
+    <ClInclude Include="Paralelogramo.h" />
   </ItemGroup>
 </Project>

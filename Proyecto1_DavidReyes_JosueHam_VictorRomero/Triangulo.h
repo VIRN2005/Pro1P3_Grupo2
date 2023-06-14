@@ -1,6 +1,4 @@
-#ifndef TRIANGULO_H
-#define TRIANGULO_H
-
+#pragma once
 #include <iostream>
 #include <iomanip>
 #include "Figuras.h"
@@ -33,5 +31,3 @@ public:
 	//Método Dibujar Descrito en las Instrucciones
 	void Dibujar() const;
 };
-
-# endif

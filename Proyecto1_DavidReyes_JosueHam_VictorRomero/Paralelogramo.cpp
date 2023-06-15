@@ -34,8 +34,15 @@ void Paralelogramo::setB(int b) {
 void Paralelogramo::setH(int h) {
 	this->h = h;
 }
+
 //metodos
-void Paralelogramo::Dibujar() const {
+string Paralelogramo::centrar(string input, int width) {
+	int spaces = (width - input.length()) / 2;
+	string mid = string(spaces, ' ') + input;
+	return mid + string((width - mid.length()), ' ');
+}
+
+void Paralelogramo::Dibujar() {
 	ifstream archivoParalelogramo("- Paralelogramo.txt");
 	if (!archivoParalelogramo) {
 		cout << "No se pudo abrir el archivo" << endl;
@@ -45,14 +52,14 @@ void Paralelogramo::Dibujar() const {
 	string line;
 
 	while (getline(archivoParalelogramo, line)) {
-		line = regex_replace(line, regex("XXaXX"), to_string(a));
-		line = regex_replace(line, regex("XXbXX"), to_string(b));
-		line = regex_replace(line, regex("XXhXX"), to_string(h));
+		line = regex_replace(line, regex("XXaXX"), centrar(to_string(a),5));
+		line = regex_replace(line, regex("XXbXX"), centrar(to_string(b), 5));
+		line = regex_replace(line, regex("XXhXX"), centrar(to_string(h), 5));
 		
-		line = regex_replace(line, regex("XXXa\\+bXXX"), to_string(a + b));
-		line = regex_replace(line, regex("XXperimetroXX"), to_string(2 * (a + b)));
+		line = regex_replace(line, regex("XXXa\\+bXXX"), centrar(to_string(a + b),9));
+		line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(2 * (a + b)),17));
 		
-		line = regex_replace(line, regex("XXareaXX"), to_string(b * h));
+		line = regex_replace(line, regex("XXareaXX"), centrar(to_string(b * h),15));
 		
 		cout << line << endl;
 	}

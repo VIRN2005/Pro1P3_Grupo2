@@ -26,8 +26,7 @@ public:
 	void setH(int);
 
 	//Dibujar
-	void Dibujar() const;
-
-
+	void Dibujar();
+	string centrar(string, int);
 };
 

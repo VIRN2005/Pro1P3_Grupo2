@@ -112,15 +112,27 @@ int Figuras::Eleccion_Figuras(int argc, char* argv[]) {
 			break;
 		}
 	}
+	else if (figura == "circulo") {
+		switch (argc) {
+		case 3: {
+			Circulo circulo(stoi(argv[2]));
+			circulo.Dibujar();
+			break;
+		}
+		default:
+			Mensaje_FiguraInvalida();
+			break;
+		}
 
-	return 0;
+		return 0;
+	}
 }
 
 void Figuras::Main_Figuras(int argc, char* argv[]) {
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
 
-	if (argc <= 2) {
+	if (argc < 1) {
 		Mensaje_FiguraInvalida();
 	}
 	else {

@@ -6,6 +6,7 @@
 #include <fstream>
 #include <iomanip>
 #include <windows.h>
+#include <regex>
 using namespace std;
 
 class Figuras {

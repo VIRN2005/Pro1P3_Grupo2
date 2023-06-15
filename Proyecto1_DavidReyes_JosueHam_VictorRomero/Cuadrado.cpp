@@ -1,5 +1,7 @@
 #include "Cuadrado.h"
 #include <fstream>
+#include <regex>
+
 Cuadrado::Cuadrado()
 	:a(0) {
 
@@ -27,10 +29,10 @@ void Cuadrado::Dibujar() const {
 
     string line;
     while (getline(archivoCuadrado, line)) {
-        line.replace(line.find("XXaXX"), 5, to_string(a));
-        line.replace(line.find("XXperimetroXX"), 13,to_string(4 * a));
-        line.replace(line.find("XXareaXX"), 8, to_string(a*a));
-
+        line = regex_replace(line, regex("XXaXX"), to_string(a));
+        line = regex_replace(line, regex("XXperimetroXX"), to_string(4 * a));
+        line = regex_replace(line, regex("XXareaXX"), to_string(a * a));
+        
         cout << line << endl;
     }
 }

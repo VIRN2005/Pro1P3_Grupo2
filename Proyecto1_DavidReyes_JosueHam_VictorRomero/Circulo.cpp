@@ -1,5 +1,7 @@
 #include "Circulo.h"
 #include <fstream>
+#include <regex>
+
 Circulo::Circulo()
 	:r(0) {
 
@@ -27,11 +29,13 @@ void Circulo::Dibujar() const {
 
     string line;
     while (getline(archivoCirculo, line)) {
-        line.replace(line.find("XXrXX"), 5, to_string(r));
-        line.replace(line.find("XXX3.14*rXXX"), 12, to_string(static_cast<double>(3.14 * r)));
-        line.replace(line.find("XXperimetroXX"), 13, to_string(static_cast<double>(2*3.14*r)));
-        line.replace(line.find("XXr*rXX"), 7, to_string(r * r));
-        line.replace(line.find("XXareaXX"), 8, to_string(3.14 * (r*r)));
+        line = regex_replace(line, regex("XXrXX"), to_string(r));
+        
+        line = regex_replace(line, regex("XXX3.14\\*rXXX"), to_string(static_cast<double>(3.14 * r)));
+        line = regex_replace(line, regex("XXperimetroXX"), to_string(static_cast<double>(2 * 3.14 * r)));
+        
+        line = regex_replace(line, regex("XXr\\*rXX"), to_string(r * r));
+        line = regex_replace(line, regex("XXareaXX"), to_string(3.14 * (r * r)));
 
         cout << line << endl;
     }

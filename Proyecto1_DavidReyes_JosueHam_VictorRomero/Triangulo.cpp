@@ -46,7 +46,12 @@ void Triangulo::setH(int h) {
 }
 
 //Métodos
-void Triangulo::Dibujar() const {
+string Triangulo::centrar(string input, int width) {
+	int spaces = (width - input.length()) / 2;
+	string mid = string(spaces, ' ') + input;
+	return mid + string((width - mid.length()), ' ');
+}
+void Triangulo::Dibujar() {
 	ifstream archivoTriangulo("- Triangulo.txt");
 	if (!archivoTriangulo) {
 		cout << "No se pudo abrir el archivo" << endl;
@@ -57,18 +62,18 @@ void Triangulo::Dibujar() const {
 	string line;
 	while (getline(archivoTriangulo, line)) {
 		string espacio = "   ";
-		line = regex_replace(line, regex("XXaXX"), to_string(a));
-		line = regex_replace(line, regex("XXbXX"), to_string(b));
-		line = regex_replace(line, regex("XXcXX"), to_string(c));
-		line = regex_replace(line, regex("XXhXX"), to_string(h));
+		line = regex_replace(line, regex("XXaXX"), centrar(to_string(a),5));
+		line = regex_replace(line, regex("XXbXX"), centrar(to_string(b),5));
+		line = regex_replace(line, regex("XXcXX"), centrar(to_string(c),5));
+		line = regex_replace(line, regex("XXhXX"), centrar(to_string(h),5));
 
 
-		line = regex_replace(line, regex("\\XXb\\+cXX"), + " " + to_string(b + c));
-		line = regex_replace(line, regex("\\XXb\\*hXX"), to_string(b*h));
+		line = regex_replace(line, regex("\\XXb\\+cXX"), centrar(to_string(b + c), 7));
+		line = regex_replace(line, regex("\\XXb\\*hXX"), centrar(to_string(b*h),7));
 		
 		
-		line = regex_replace(line, regex("XXperimetroXX"), to_string(a + b + c));
-		line = regex_replace(line, regex("XXareaXX"), to_string(a * a));
+		line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(a + b + c), 17));
+		line = regex_replace(line, regex("XXareaXX"), centrar(to_string(a * a), 15));
 
 		cout << line << endl;
 

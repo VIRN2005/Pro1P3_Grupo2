@@ -19,9 +19,9 @@
 |     ---/                       |   |           -\         |                  |                |                 
 |   -/-----------------------------------------------       |XXaXX+XXbXX+XXcXX | XXbXX*XXhXX/ 2 |                 
 |                            b=XXbXX                        |                  |                |                 
-|                                                           |  XXaXX + XXb+cXX   |  XXb*hXX/ 2    |                 
+|                                                           |  XXaXX + XXb+cXX |  XXb*hXX/ 2    |                 
 |                                                           |                  |                |                 
-|                                                           |  XXperimetroXX   |    XXareaXX    |                 
+|                                                           | XXperimetroXX| XXareaXX|                 
 |                                                           |                  |                |                 
 |                                                           |                  |                |                 
 +-----------------------------------------------------------------------------------------------+           

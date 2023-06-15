@@ -10,6 +10,7 @@
 
 using namespace std;
 
+
 void Figuras::Mensaje_FiguraInvalida() {
 	ifstream archivoNoParametros("- Parametros_Invalidos.txt", ios::in);
 

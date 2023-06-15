@@ -1,5 +1,6 @@
 #include "Triangulo.h"
 #include <fstream>
+#include <regex>
 
 // Constructores
 Triangulo::Triangulo()
@@ -52,22 +53,25 @@ void Triangulo::Dibujar() const {
 		exit(EXIT_FAILURE);
 	}
 
+
 	string line;
-
 	while (getline(archivoTriangulo, line)) {
-		line.replace(line.find("XXaXX"), 5, to_string(a));
-		line.replace(line.find("XXbXX"), 5, to_string(b));
-		line.replace(line.find("XXcXX"), 5, to_string(c));
-		line.replace(line.find("XXhXX"), 5, to_string(h));
+		string espacio = "   ";
+		line = regex_replace(line, regex("XXaXX"), to_string(a));
+		line = regex_replace(line, regex("XXbXX"), to_string(b));
+		line = regex_replace(line, regex("XXcXX"), to_string(c));
+		line = regex_replace(line, regex("XXhXX"), to_string(h));
 
-		line.replace(line.find("XXb+cXX"), 7, to_string(b + c));
-		line.replace(line.find("XXperimetroXX"), 13, to_string(a + b + c));
 
-		line.replace(line.find("XXb*hXX"), 7, to_string(b * h));
-		line.replace(line.find("XXareaXX"), 8, to_string(static_cast<double>(b * h) / 2.0));
+		line = regex_replace(line, regex("\\XXb\\+cXX"), + " " + to_string(b + c));
+		line = regex_replace(line, regex("\\XXb\\*hXX"), to_string(b*h));
+		
+		
+		line = regex_replace(line, regex("XXperimetroXX"), to_string(a + b + c));
+		line = regex_replace(line, regex("XXareaXX"), to_string(a * a));
 
 		cout << line << endl;
+
 	}
 
 }
-

@@ -3,7 +3,7 @@
   <ItemGroup>
     <ClCompile Include="Cuadrado.cpp" />
     <ClCompile Include="Figuras.cpp" />
-    <ClCompile Include="Proyecto1_DavidReyes_JosueHam_VictorRomero.cpp" />
+    <ClCompile Include="Figuras_Planas.cpp" />
     <ClCompile Include="Rectangulo.cpp" />
     <ClCompile Include="Rombo.cpp" />
     <ClCompile Include="Triangulo.cpp" />

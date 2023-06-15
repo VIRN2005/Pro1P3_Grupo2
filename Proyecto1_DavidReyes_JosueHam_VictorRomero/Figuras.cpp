@@ -126,13 +126,16 @@ int Figuras::Eleccion_Figuras(int argc, char* argv[]) {
 
 		return 0;
 	}
+	else{
+		Mensaje_FiguraInvalida();
+	}
 }
 
 void Figuras::Main_Figuras(int argc, char* argv[]) {
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
 
-	if (argc < 1) {
+	if (argc <= 1) {
 		Mensaje_FiguraInvalida();
 	}
 	else {

@@ -19,7 +19,13 @@ void Cuadrado::setA(int a) {
 	this->a = a;
 }
 
-void Cuadrado::Dibujar() const {
+string Cuadrado::centrar(string input, int width) {
+    int spaces = (width - input.length()) / 2;
+    string mid = string(spaces, ' ') + input;
+    return mid + string((width - mid.length()), ' ');
+}
+
+void Cuadrado::Dibujar() {
     ifstream archivoCuadrado("- Cuadrado.txt", ios::in);
 
     if (!archivoCuadrado) {
@@ -29,9 +35,9 @@ void Cuadrado::Dibujar() const {
 
     string line;
     while (getline(archivoCuadrado, line)) {
-        line = regex_replace(line, regex("XXaXX"), to_string(a));
-        line = regex_replace(line, regex("XXperimetroXX"), to_string(4 * a));
-        line = regex_replace(line, regex("XXareaXX"), to_string(a * a));
+        line = regex_replace(line, regex("XXaXX"), centrar(to_string(a),5));
+        line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(4 * a),17));
+        line = regex_replace(line, regex("XXareaXX"), centrar(to_string(a * a),15));
         
         cout << line << endl;
     }

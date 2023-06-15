@@ -19,6 +19,7 @@ public:
 	void setA(int);
 
 	//Método Dibujar Descrito en las Instruccioness
-	void Dibujar() const;
+	void Dibujar();
+	string centrar(string, int);
 };
 

@@ -1,5 +1,6 @@
 #include "Cometa.h"
 #include <fstream>
+#include <regex>
 
 // Constructores
 Cometa::Cometa()
@@ -45,7 +46,13 @@ void Cometa::setD(int D) {
 }
 
 //Métodos
-void Cometa::Dibujar() const {
+string Cometa::centrar(string input, int width) {
+	int spaces = (width - input.length()) / 2;
+	string mid = string(spaces, ' ') + input;
+	return mid + string((width - mid.length()), ' ');
+}
+
+void Cometa::Dibujar() {
 	ifstream archivoCometa("- Cometa.txt");
 	if (!archivoCometa) {
 		cout << "No se pudo abrir el archivo" << endl;
@@ -55,18 +62,17 @@ void Cometa::Dibujar() const {
 	string line;
 
 	while (getline(archivoCometa, line)) {
-		line = regex_replace(line, regex("XXaXX"), to_string(a));
-		line = regex_replace(line, regex("XXbXX"), to_string(b));
-		line = regex_replace(line, regex("XXdXX"), to_string(d));
-		line = regex_replace(line, regex("XXDXX"), to_string(D));
+		line = regex_replace(line, regex("XXaXX"), centrar(to_string(a), 5));
+		line = regex_replace(line, regex("XXbXX"), centrar(to_string(b), 5));
+		line = regex_replace(line, regex("XXDXX"), centrar(to_string(D), 5));
+		line = regex_replace(line, regex("XXdXX"), centrar(to_string(d), 5));
 
-		line = regex_replace(line, regex("XXXb\\+aXXX"), to_string(b + a));
-		line = regex_replace(line, regex("XXperimetroXX"), to_string(2 * (a + b)));
+		line = regex_replace(line, regex("XXXb\\+aXXX"), centrar(to_string(b + a), 9));
+		line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(2 * (a + b)), 17));
 
-		line = regex_replace(line, regex("XXD\\*dXX"), to_string(D * d));
-		line = regex_replace(line, regex("XXareaXX"), to_string(static_cast<double>(D * d) / 2.0));
+		line = regex_replace(line, regex("XXD\\*dXX"), centrar(to_string(D * d), 7));
+		line = regex_replace(line, regex("XXareaXX"), centrar(to_string(static_cast<double>(D * d) / 2.0), 15));
 
 		cout << line << endl;
 	}
-
-}
+};

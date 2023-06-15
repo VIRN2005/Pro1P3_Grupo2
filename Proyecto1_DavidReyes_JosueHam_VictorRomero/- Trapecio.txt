@@ -1,4 +1,4 @@
- 		   Perímetros y áreas de figuras planas                     
+ 		    Perímetros y áreas de figuras planas                     
                                                                               
           Figura                   Perímetro                  Área     
 +----------------------------------------------------------------------------+                      
@@ -12,11 +12,12 @@
 |   /   |---+   B       \  |-------------------------------------------------|                      
 |  /----|---|------------\ |                    Desarrollo                   |                      
 |                          |-------------------------------------------------|                      
-|  a = XXaXX   b = XXbXX   |                        |((XXBXX+XXbXX)*XXhXX)/2 |                      
-|                          |XXBXX+XXbXX+XXaXX+XXcXX |                        |                      
-|  B = XXBXX   c = XXcXX   |                        |   XXXB+bXXX*XXhXX/ 2   |                      
-|                          |    XXB+bXX+XXa+cXX     |                        |                      
-|        h = XXhXX         |                        |     XXXB+b*hXXX/  2    |                      
-|                          |    XXperimetroXX       |                        |
-|                          |                        |        XXareaXX        |
+|  a = XXaXX   b = XXbXX   |                        | ((XXBXX+XXbXX)*XXhXX)/2  |                      
+|                          | XXBXX+XXbXX+XXaXX+XXcXX|                        |                      
+|  B = XXBXX   c = XXcXX   |                        |    XXB+bXX*XXhXX/ 2      |                      
+|                          |      XXB+bXX+XXa+cXX       |                        |                      
+|        h = XXhXX         |                        |    XXXB+b*hXXX/2       |                      
+|                          |   XXperimetroXX    |                        |
+|                          |                        |     XXareaXX    |
 +----------------------------------------------------------------------------+ 
+

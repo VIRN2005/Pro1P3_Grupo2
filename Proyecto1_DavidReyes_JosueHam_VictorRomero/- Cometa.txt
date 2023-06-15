@@ -17,6 +17,6 @@
 |     \ |          -----/                  |                 |               |      
 |      \|    -----/ b          d = XXdXX   |  2 * XXXb+aXXX  |  XXD*dXX/ 2   |      
 |       ----/                              |                 |               |      
-|                              D = XXDXX   |   XXperimetroXX |   XXareaXX    |      
+|                              D = XXDXX   |XXperimetroXX|XXareaXX|      
 |                                          |                 |               |      
 +----------------------------------------------------------------------------+

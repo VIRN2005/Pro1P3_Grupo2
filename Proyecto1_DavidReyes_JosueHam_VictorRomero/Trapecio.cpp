@@ -1,5 +1,7 @@
 #include "Trapecio.h"
 #include <fstream>
+#include <regex>
+
 // Constructores
 Trapecio::Trapecio()
 	: a(0), b(0), B(0), c(0), h(0) {
@@ -52,7 +54,12 @@ void Trapecio::setH(int h) {
 }
 
 //Métodos
-void Trapecio::Dibujar() const {
+string Trapecio::centrar(string input, int width) {
+	int spaces = (width - input.length()) / 2;
+	string mid = string(spaces, ' ') + input;
+	return mid + string((width - mid.length()), ' ');
+}
+void Trapecio::Dibujar() {
 	ifstream archivoTrapecio("- Trapecio.txt");
 	if (!archivoTrapecio) {
 		cout << "No se pudo abrir el archivo" << endl;
@@ -62,18 +69,18 @@ void Trapecio::Dibujar() const {
 	string line;
 
 	while (getline(archivoTrapecio, line)) {
-		line = regex_replace(line, regex("XXaXX"), to_string(a));
-		line = regex_replace(line, regex("XXbXX"), to_string(b));
-		line = regex_replace(line, regex("XXBXX"), to_string(B));
-		line = regex_replace(line, regex("XXcXX"), to_string(c));
-		line = regex_replace(line, regex("XXhXX"), to_string(h));
+		line = regex_replace(line, regex("XXaXX"), centrar(to_string(a), 6));
+		line = regex_replace(line, regex("XXbXX"), centrar(to_string(b), 4));
+		line = regex_replace(line, regex("XXBXX"), centrar(to_string(B), 4));
+		line = regex_replace(line, regex("XXcXX"), centrar(to_string(c), 6));
+		line = regex_replace(line, regex("XXhXX"), centrar(to_string(h), 5));
 
-		line = regex_replace(line, regex("XXB+bXX"), to_string(b + B));
-		line = regex_replace(line, regex("XXa+cXX"), to_string(a + c));
-		line = regex_replace(line, regex("XXperimetroXX"), to_string(B+b+a+c));
+		line = regex_replace(line, regex("XXB\\+bXX"), centrar(to_string(b + B), 5));
+		line = regex_replace(line, regex("XXa\\+cXX"), centrar(to_string(a + c), 5));
+		line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(B + b + a + c), 17));
 
-		line = regex_replace(line, regex("XXXB+b*hXXX"), to_string((B+b* h)));
-		line = regex_replace(line, regex("XXareaXX"), to_string(static_cast<double>(B +b*h) / 2.0));
+		line = regex_replace(line, regex("XXXB\\+b\\*hXXX"), centrar(to_string((B + b * h)), 11));
+		line = regex_replace(line, regex("XXareaXX"), centrar(to_string(static_cast<double>(B + b * h) / 2.0), 15));
 
 		cout << line << endl;
 	}

@@ -1,8 +1,8 @@
 #include "Rombo.h"
 #include <fstream>
 //Cuerpos de los constructores
-Rombo::Rombo() 
-	: a(0), d(0), D(0){
+Rombo::Rombo()
+	: a(0), d(0), D(0) {
 }
 
 Rombo::Rombo(int ax, int dx, int DX)
@@ -10,13 +10,13 @@ Rombo::Rombo(int ax, int dx, int DX)
 }
 
 //Cuerpos de los getters
-int Rombo::getA() const{
+int Rombo::getA() const {
 	return a;
 }
-int Rombo::getd() const{
+int Rombo::getd() const {
 	return d;
 }
-int Rombo::getD() const{
+int Rombo::getD() const {
 	return D;
 }
 
@@ -32,25 +32,25 @@ void Rombo::setD(int D) {
 }
 
 void Rombo::Dibujar() const {
-    ifstream archivoRombo("- Rombo.txt", ios::in);
+	ifstream archivoRombo("- Rombo.txt", ios::in);
 
-    if (!archivoRombo) {
-        cout << "No se pudo abrir el archivo" << endl;
-        exit(EXIT_FAILURE);
-    }
+	if (!archivoRombo) {
+		cout << "No se pudo abrir el archivo" << endl;
+		exit(EXIT_FAILURE);
+	}
 
-    string line;
-    while (getline(archivoRombo, line)) {
-        line.replace(line.find("XXaXX"), 5, to_string(a));
-        line.replace(line.find("XXdXX"), 5, to_string(d));
-        line.replace(line.find("XXDXX"), 5, to_string(D));
-
-        line.replace(line.find("XXperimetroXX"), 13, to_string(static_cast < double>(4 * a)));
-
-        line.replace(line.find("XXD*dXX"), 7, to_string(D * d));
-        line.replace(line.find("XXareaXX"), 8, to_string(static_cast<double>(D * d)/2.0));
+	string line;
+	while (getline(archivoRombo, line)) {
+		line = regex_replace(line, regex("XXaXX"), to_string(a));
+		line = regex_replace(line, regex("XXdXX"), to_string(d));
+		line = regex_replace(line, regex("XXDXX"), to_string(D));
 
 
-        cout << line << endl;
-    }
+		line = regex_replace(line, regex("XXperimetroXX"), to_string(static_cast <double>(4 * a)));
+
+		line = regex_replace(line, regex("\\XXD\\*dXX"), to_string(D * d));
+		line = regex_replace(line, regex("XXareaXX"), to_string(static_cast<double>(D * d) / 2.0));
+
+		cout << line << endl;
+	}
 }

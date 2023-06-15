@@ -3,23 +3,29 @@
 #include <regex>
 
 Circulo::Circulo()
-	:r(0) {
+    :r(0) {
 
 }
 
 Circulo::Circulo(int rx)
-	: r(rx) {
+    : r(rx) {
 }
 
 int Circulo::getR() const {
-	return r;
+    return r;
 }
 
 void Circulo::setR(int r) {
-	this->r = r;
+    this->r = r;
 }
 
-void Circulo::Dibujar() const {
+string Circulo::centrar(string input, int width) {
+    int spaces = (width - input.length()) / 2;
+    string mid = string(spaces, ' ') + input;
+    return mid + string((width - mid.length()), ' ');
+}
+
+void Circulo::Dibujar() {
     ifstream archivoCirculo("- Circulo.txt", ios::in);
 
     if (!archivoCirculo) {
@@ -29,13 +35,13 @@ void Circulo::Dibujar() const {
 
     string line;
     while (getline(archivoCirculo, line)) {
-        line = regex_replace(line, regex("XXrXX"), to_string(r));
-        
-        line = regex_replace(line, regex("XXX3.14\\*rXXX"), to_string(static_cast<double>(3.14 * r)));
-        line = regex_replace(line, regex("XXperimetroXX"), to_string(static_cast<double>(2 * 3.14 * r)));
-        
-        line = regex_replace(line, regex("XXr\\*rXX"), to_string(r * r));
-        line = regex_replace(line, regex("XXareaXX"), to_string(3.14 * (r * r)));
+        line = regex_replace(line, regex("XXrXX"), centrar(to_string(r), 5));
+
+        line = regex_replace(line, regex("XXX3.14\\*rXXX"), centrar(to_string(static_cast<double>(3.14 * r)), 12));
+        line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(static_cast<double>(2 * 3.14 * r)), 17));
+
+        line = regex_replace(line, regex("XXr\\*rXX"), centrar(to_string(r * r), 7));
+        line = regex_replace(line, regex("XXareaXX"), centrar(to_string(3.14 * (r * r)), 15));
 
         cout << line << endl;
     }

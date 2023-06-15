@@ -15,8 +15,8 @@
 |              x          x                |                 |               |
 |               x        x                 | 2 * 3.14 *XXrXX | 3.14 *XXrXX^2 |
 |                 x xx x                   |                 |               |      
-|                                          | 2 *XXX3.14*rXXX | 3.14 *XXr*rXX |      
+|                                          | 2 *XXX3.14*rXXX |  3.14 *XXr*rXX|      
 |                                          |                 |               |      
-|                                          |  XXperimetroXX  |   XXareaXX    |      
+|                                          |XXperimetroXX|XXareaXX|      
 |                                          |                 |               |      
 +----------------------------------------------------------------------------+

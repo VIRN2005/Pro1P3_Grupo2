@@ -19,10 +19,10 @@ void Cuadrado::setA(int a) {
 	this->a = a;
 }
 
-string Cuadrado::centrar(string input, int width) {
-    int spaces = (width - input.length()) / 2;
-    string mid = string(spaces, ' ') + input;
-    return mid + string((width - mid.length()), ' ');
+string Cuadrado::centrar(string entrada, int anchura) {
+    int espacios = (anchura - entrada.length()) / 2;
+    string mitad = string(espacios, ' ') + entrada;
+    return mitad + string((anchura - mitad.length()), ' ');
 }
 
 void Cuadrado::Dibujar() {

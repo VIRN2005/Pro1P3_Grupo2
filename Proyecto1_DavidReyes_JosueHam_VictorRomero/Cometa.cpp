@@ -46,10 +46,10 @@ void Cometa::setD(int D) {
 }
 
 //Métodos
-string Cometa::centrar(string input, int width) {
-	int spaces = (width - input.length()) / 2;
-	string mid = string(spaces, ' ') + input;
-	return mid + string((width - mid.length()), ' ');
+string Cometa::centrar(string entrada, int anchura) {
+	int espacios = (anchura - entrada.length()) / 2;
+	string mitad = string(espacios, ' ') + entrada;
+	return mitad + string((anchura - mitad.length()), ' ');
 }
 
 void Cometa::Dibujar() {

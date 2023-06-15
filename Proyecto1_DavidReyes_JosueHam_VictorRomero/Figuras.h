@@ -11,6 +11,7 @@ using namespace std;
 
 class Figuras {
 public:
+	virtual void Dibujar();
 	static void Main_Figuras(int argc, char* argv[]);
 	static void Mensaje_FiguraInvalida();
 	static int Eleccion_Figuras(int argc, char* argv[]);

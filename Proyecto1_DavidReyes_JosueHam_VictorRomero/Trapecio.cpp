@@ -62,19 +62,18 @@ void Trapecio::Dibujar() const {
 	string line;
 
 	while (getline(archivoTrapecio, line)) {
-		line.replace(line.find("XXaXX"), 5, to_string(a));
-		line.replace(line.find("XXbXX"), 5, to_string(b));
-		line.replace(line.find("XXBXX"), 5, to_string(B));
-		line.replace(line.find("XXcXX"), 5, to_string(c));
-		line.replace(line.find("XXhXX"), 5, to_string(h));
+		line = regex_replace(line, regex("XXaXX"), to_string(a));
+		line = regex_replace(line, regex("XXbXX"), to_string(b));
+		line = regex_replace(line, regex("XXBXX"), to_string(B));
+		line = regex_replace(line, regex("XXcXX"), to_string(c));
+		line = regex_replace(line, regex("XXhXX"), to_string(h));
 
-		line.replace(line.find("XXB+bXX"), 7, to_string(B + b));
-		line.replace(line.find("XXa+cXX"), 7, to_string(a + c));
-		line.replace(line.find("XXperimetroXX"), 13, to_string(B + b + a + c));
+		line = regex_replace(line, regex("XXB+bXX"), to_string(b + B));
+		line = regex_replace(line, regex("XXa+cXX"), to_string(a + c));
+		line = regex_replace(line, regex("XXperimetroXX"), to_string(B+b+a+c));
 
-		line.replace(line.find("XXXB+bXXX"), 9, to_string(B + b));
-		line.replace(line.find("XXXB+b*hXXX"), 11, to_string((B + b) * h));
-		line.replace(line.find("XXareaXX"), 8, to_string(static_cast<double>((B + b) * h) / 2.0));
+		line = regex_replace(line, regex("XXXB+b*hXXX"), to_string((B+b* h)));
+		line = regex_replace(line, regex("XXareaXX"), to_string(static_cast<double>(B +b*h) / 2.0));
 
 		cout << line << endl;
 	}

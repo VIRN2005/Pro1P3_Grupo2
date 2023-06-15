@@ -24,5 +24,6 @@ public:
 	void setD(int);
 
 	//Metodos
-	void Dibujar() const;
+	void Dibujar();
+	string centrar(string input, int width);
 };

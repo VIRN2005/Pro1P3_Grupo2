@@ -30,8 +30,12 @@ void Rombo::setd(int d) {
 void Rombo::setD(int D) {
 	this->D = D;
 }
-
-void Rombo::Dibujar() const {
+string Rombo::centrar(string input, int width) {
+	int spaces = (width - input.length()) / 2;
+	string mid = string(spaces, ' ') + input;
+	return mid + string((width - mid.length()), ' ');
+}
+void Rombo::Dibujar()  {
 	ifstream archivoRombo("- Rombo.txt", ios::in);
 
 	if (!archivoRombo) {
@@ -41,15 +45,14 @@ void Rombo::Dibujar() const {
 
 	string line;
 	while (getline(archivoRombo, line)) {
-		line = regex_replace(line, regex("XXaXX"), to_string(a));
-		line = regex_replace(line, regex("XXdXX"), to_string(d));
-		line = regex_replace(line, regex("XXDXX"), to_string(D));
+		line = regex_replace(line, regex("XXaXX"), centrar(to_string(a), 5));
+		line = regex_replace(line, regex("XXdXX"), centrar(to_string(d), 5));
+		line = regex_replace(line, regex("XXDXX"), centrar(to_string(D), 5));
+		
+		line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(static_cast <double>(4 * a)), 13));
 
-
-		line = regex_replace(line, regex("XXperimetroXX"), to_string(static_cast <double>(4 * a)));
-
-		line = regex_replace(line, regex("\\XXD\\*dXX"), to_string(D * d));
-		line = regex_replace(line, regex("XXareaXX"), to_string(static_cast<double>(D * d) / 2.0));
+		line = regex_replace(line, regex("\\XXD\\*dXX"), centrar(to_string(D * d), 2));
+		line = regex_replace(line, regex("XXareaXX"), centrar(to_string(static_cast<double>(D * d) / 2.0), 9));
 
 		cout << line << endl;
 	}

@@ -23,8 +23,12 @@ void Rectangulo::setA(int a) {
 void Rectangulo::setB(int b) {
 	this->b = b;
 }
-
-void Rectangulo::Dibujar() const {
+string Rectangulo::centrar(string input, int width) {
+    int spaces = (width - input.length()) / 2;
+    string mid = string(spaces, ' ') + input;
+    return mid + string((width - mid.length()), ' ');
+}
+void Rectangulo::Dibujar() {
     ifstream archivoRectangulo("- Rectangulo.txt", ios::in);
 
     if (!archivoRectangulo) {
@@ -34,12 +38,13 @@ void Rectangulo::Dibujar() const {
 
     string line;
     while (getline(archivoRectangulo, line)) {
-        line = regex_replace(line, regex("XXaXX"), to_string(a));
-        line = regex_replace(line, regex("XXbXX"), to_string(b));
+        line = regex_replace(line, regex("XXaXX"), centrar(to_string(a), 5));
+        line = regex_replace(line, regex("XXbXX"), centrar(to_string(b), 5));
+        
 
-        line = regex_replace(line, regex("XXareaXX"), to_string(static_cast<double>(b * a)));
-        line = regex_replace(line, regex("\\XXXb\\+aXXX"), to_string(a + b));
-        line = regex_replace(line, regex("XXperimetroXX"), to_string(static_cast<double>(2 * (a + b))));
+        line = regex_replace(line, regex("XXareaXX"), centrar(to_string(static_cast<double>(b * a)), 15));
+        line = regex_replace(line, regex("\\XXXb\\+aXXX"), centrar(to_string(a + b), 9));
+        line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(static_cast<double>(2 * (a + b))), 17));
         
         cout << line << endl;
     }

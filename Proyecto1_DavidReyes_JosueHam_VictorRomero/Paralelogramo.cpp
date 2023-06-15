@@ -45,15 +45,15 @@ void Paralelogramo::Dibujar() const {
 	string line;
 
 	while (getline(archivoParalelogramo, line)) {
-		line.replace(line.find("XXaXX"), 5, to_string(a));
-		line.replace(line.find("XXbXX"), 5, to_string(b));
-		line.replace(line.find("XXhXX"), 5, to_string(h));
-
-		line.replace(line.find("XXXa+bXXX"), 9, to_string(a + b));
-		line.replace(line.find("XXperimetroXX"), 13, to_string(2*(a + b)));
-
-		line.replace(line.find("XXareaXX"), 8, to_string(b * h));
-
+		line = regex_replace(line, regex("XXaXX"), to_string(a));
+		line = regex_replace(line, regex("XXbXX"), to_string(b));
+		line = regex_replace(line, regex("XXhXX"), to_string(h));
+		
+		line = regex_replace(line, regex("XXXa\\+bXXX"), to_string(a + b));
+		line = regex_replace(line, regex("XXperimetroXX"), to_string(2 * (a + b)));
+		
+		line = regex_replace(line, regex("XXareaXX"), to_string(b * h));
+		
 		cout << line << endl;
 	}
 

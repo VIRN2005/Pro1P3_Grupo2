@@ -55,16 +55,16 @@ void Cometa::Dibujar() const {
 	string line;
 
 	while (getline(archivoCometa, line)) {
-		line.replace(line.find("XXaXX"), 5, to_string(a));
-		line.replace(line.find("XXbXX"), 5, to_string(b));
-		line.replace(line.find("XXdXX"), 5, to_string(d));
-		line.replace(line.find("XXDXX"), 5, to_string(D));
+		line = regex_replace(line, regex("XXaXX"), to_string(a));
+		line = regex_replace(line, regex("XXbXX"), to_string(b));
+		line = regex_replace(line, regex("XXdXX"), to_string(d));
+		line = regex_replace(line, regex("XXDXX"), to_string(D));
 
-		line.replace(line.find("XXXb+aXXX"), 9, to_string(b + a));
-		line.replace(line.find("XXperimetroXX"), 13, to_string(2*(a + b)));
+		line = regex_replace(line, regex("XXXb\\+aXXX"), to_string(b + a));
+		line = regex_replace(line, regex("XXperimetroXX"), to_string(2 * (a + b)));
 
-		line.replace(line.find("XXD*dXX"), 7, to_string(D * d));
-		line.replace(line.find("XXareaXX"), 8, to_string(static_cast<double>(D * d) / 2.0));
+		line = regex_replace(line, regex("XXD\\*dXX"), to_string(D * d));
+		line = regex_replace(line, regex("XXareaXX"), to_string(static_cast<double>(D * d) / 2.0));
 
 		cout << line << endl;
 	}

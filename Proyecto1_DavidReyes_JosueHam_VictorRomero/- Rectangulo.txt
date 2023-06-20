@@ -1,6 +1,6 @@
       Perímetros y áreas de figuras planas                     
                                                                               
-                  Figura                         Perímetro          Área     
+                  Figura                         Perímetro         Área     
 +----------------------------------------------------------------------------+      
 |                Rectángulo                |             Formulas            |      
 |------------------------------------------|---------------------------------|      

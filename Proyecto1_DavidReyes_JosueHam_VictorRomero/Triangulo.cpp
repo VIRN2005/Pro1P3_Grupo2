@@ -74,7 +74,7 @@ void Triangulo::Dibujar() {
 		
 		
 		line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(a + b + c), 17));
-		line = regex_replace(line, regex("XXareaXX"), centrar(to_string(a * a), 15));
+		line = regex_replace(line, regex("XXareaXX"), centrar(to_string(static_cast<double>(b * h)/ 2.0), 15));
 
 		cout << line << endl;
 

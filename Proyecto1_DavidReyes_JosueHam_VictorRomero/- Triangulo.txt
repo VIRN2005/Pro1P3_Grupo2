@@ -1,4 +1,4 @@
-  Perímetros y áreas de figuras planas                     
+                          Perímetros y áreas de figuras planas                     
                                                                               
                   Figura                         Perímetro          Área     
 +----------------------------------------------------------------------------+      
@@ -15,10 +15,8 @@
 |            /       |      \              |                 |               |      
 |           /        |       \             |XXaXX+XXbXX+XXcXX|XXbXX*XXhXX/ 2 |      
 |          /h = XXhXX|        \            |                 |               |      
-|         /          |--+      \           |  XXaXX+XXb+cXX  |  XXb*hXX/ 2   |      
+|         /          |--+      \           |   XXaXX+XXb+cXX | XXb*hXX/ 2    |      
 |        /           |  |       \          |                 |               |      
 |       --------------------------         |XXperimetroXX|XXareaXX|      
 |                b = XXbXX                 |                 |               |      
-+----------------------------------------------------------------------------+      
-
-      
++----------------------------------------------------------------------------+

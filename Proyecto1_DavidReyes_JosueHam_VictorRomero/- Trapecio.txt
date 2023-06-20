@@ -12,11 +12,11 @@
 |   /   |---+   B       \  |-------------------------------------------------|                      
 |  /----|---|------------\ |                    Desarrollo                   |                      
 |                          |-------------------------------------------------|                      
-|  a = XXaXX   b = XXbXX   |                        | ((XXBXX+XXbXX)*XXhXX)/2  |                      
+|  a = XXaXX   b = XXbXX   |                        | ((XXBXX+XXbXX)*XXhXX)/ 2 |                      
 |                          | XXBXX+XXbXX+XXaXX+XXcXX|                        |                      
-|  B = XXBXX   c = XXcXX   |                        |    XXB+bXX*XXhXX/ 2      |                      
+|  B =  XXBXX    c = XXcXX |                        |    XXB+bXX*XXhXX/ 2      |                      
 |                          |      XXB+bXX+XXa+cXX       |                        |                      
-|        h = XXhXX         |                        |    XXXB+b*hXXX/2       |                      
+|         h = XXhXX        |                        |  XXXB+b*hXXX/  2       |                      
 |                          |   XXperimetroXX    |                        |
 |                          |                        |     XXareaXX    |
 +----------------------------------------------------------------------------+ 

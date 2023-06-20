@@ -15,7 +15,7 @@
 |            /       |      \              |                 |               |      
 |           /        |       \             |XXaXX+XXbXX+XXcXX|XXbXX*XXhXX/ 2 |      
 |          /h = XXhXX|        \            |                 |               |      
-|         /          |--+      \           |   XXaXX+XXb+cXX | XXb*hXX/ 2    |      
+|         /          |--+      \           |   XXaXX+XXb+cXX |   XXb*hXX/ 2  |      
 |        /           |  |       \          |                 |               |      
 |       --------------------------         |XXperimetroXX|XXareaXX|      
 |                b = XXbXX                 |                 |               |      

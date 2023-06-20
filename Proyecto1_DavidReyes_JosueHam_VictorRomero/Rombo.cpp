@@ -52,8 +52,8 @@ void Rombo::Dibujar()  {
 		
 		line = regex_replace(line, regex("XXperimetroXX"), centrar(to_string(static_cast <double>(4 * a)), 13));
 
-		line = regex_replace(line, regex("\\XXD\\*dXX"), centrar(to_string(D * d), 2));
-		line = regex_replace(line, regex("XXareaXX"), centrar(to_string(static_cast<double>(D * d) / 2.0), 9));
+		line = regex_replace(line, regex("\\XXD\\*dXX"), centrar(to_string(D * d), 9));
+		line = regex_replace(line, regex("XXareaXX"), centrar(to_string(static_cast<double>(D * d) / 2.0), 15));
 
 		cout << line << endl;
 	}
